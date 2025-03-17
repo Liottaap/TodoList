@@ -1,0 +1,25 @@
+
+.loading{
+    background-image: url('../../assets/retro-loading.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 400px;
+    height: 200px;
+    position: relative;
+}
+.loading-span{
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: rgb(82, 42, 7);
+    top: 115.5px;
+    right: 152px;
+    animation: loadPoint 1.6s infinite steps(2);
+
+}
+/* Animación para el parpadeo en el loading */
+@keyframes loadPoint {
+    0%, 50% { opacity: 1; }  
+    51%, 100% { opacity: 0; }
+}

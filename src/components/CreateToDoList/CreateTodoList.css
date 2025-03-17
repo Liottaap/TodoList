@@ -1,0 +1,19 @@
+.create-button{
+    font-size: 1.1rem;
+    background-color: rgba(245, 245, 245, 0.6);
+    border-radius: 20px;
+    border: 1px solid whitesmoke;
+
+    width: 100px;
+    height: 30px;
+    padding: 10px auto;
+    text-align: center;
+}
+
+.create-button:active{
+    border: 2px solid blueviolet;
+}
+.create-button:hover{
+
+    background-color: rgba(245, 245, 245);
+}

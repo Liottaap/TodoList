@@ -1,0 +1,59 @@
+.todoForm-container{
+    width: 90%;
+    max-width: 500px;
+    background-color: whitesmoke;
+    padding: 33px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+
+.tooForm-label{
+    font-size: 1.5rem;
+}
+
+.button-container{
+    display: flex;
+    width: 90%;
+    justify-content: flex-end;
+    gap: 10px;
+    align-items: center;
+}
+textarea{
+    background-color: white;
+    margin: auto;
+    width: 100%;
+    color: black;
+    font-size: 1.1rem;
+    padding: 10px;
+    resize: none;
+
+}
+
+
+.todoForm-button{
+ width: 50px;
+ height: 25px;
+ box-shadow: 3px 3px violet;
+ background-color: none;
+
+}
+
+.todoForm-button--cancel,
+.todoForm-button--add{
+    box-shadow: 3px 3px violet;
+}
+.todoForm-button--cancel:active,
+.todoForm-button--add:active{
+    box-shadow: none;
+    transform: translateX(3px);
+    transform: translateY(3px);
+}
+
+
+
+.todoForm-button--add{
+
+}

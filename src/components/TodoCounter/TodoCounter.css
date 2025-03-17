@@ -1,0 +1,39 @@
+.todo-counter{
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-style: normal;
+    margin-top: 0;
+    text-align: center;
+    gap: 40px;
+    @media(max-width: 1000px){
+        gap: 0;
+    }
+}
+
+.congrats-container{
+
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    @media(max-width: 1000px){
+        margin-top: 0
+
+    }
+}
+.congrats-message{
+    font-size: 1.8rem;
+    color: whitesmoke;
+    @media(max-width:1000px){
+        font-size: 1.6rem;
+        text-align: center;
+    }
+}
+
+.TodoCounter{
+    margin: 0;
+    @media(max-width: 1000px){
+        font-size: 1.4rem;
+    }
+}
