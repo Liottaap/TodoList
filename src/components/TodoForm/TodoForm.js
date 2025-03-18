@@ -26,7 +26,11 @@ function TodoForm(){
         <form 
         className="todoForm-container" 
         onSubmit={onSubmit}>
-            <label className="tooForm-label">Create a new task</label>
+            <label 
+                className="tooForm-label"
+                for="todo-inputs"
+                name="todo-input-name"
+                >Create a new task</label>
             <textarea 
             placeholder="Drink coffee"
             value={newTask}
