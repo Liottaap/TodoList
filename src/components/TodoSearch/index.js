@@ -1,6 +1,6 @@
 import React from 'react';
 import './TodoSearch.css'
-import { CreateTodoList } from '../CreateToDoList';
+import {CreateTodoList} from '../CreateToDoList/index'
 import { AudioPlayer } from '../../components/Play/Play';
 import { TodoContext } from '../../TodoContext';
 
@@ -31,12 +31,6 @@ function TodoSearch(){
       </section>
       <AudioPlayer 
       />
-
-
-      {/* Botones */}
-{/*       <article className='bg-buttons'>
-        <button>New List</button>
-      </article> */}
     </div>
 
   );

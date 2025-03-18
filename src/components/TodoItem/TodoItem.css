@@ -1,8 +1,8 @@
 
 .ToDoItem {
     width: 100%;
-    height: 50px;
-
+    height: auto;
+    line-height: 2.4rem;
     padding: 10px;
     padding-left: 30px;
 
@@ -10,19 +10,24 @@
     border-radius: 20px;
     background-color: whitesmoke;
 
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 10% 85% 5%;
     align-items: center;
+    align-content: center;
+    justify-content: center;
 }
 
 .ToDoItem:focus{
     background-color: black;
 }
 
-.ToDoItem-p{
-    line-height: 2.4rem;
-    font-weight: 400;
-    color: #2a272fd9;
+.ToDoItem-p {
+    grid-column: 2 / 3;
+    width: 100%;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal; /* Permite que el texto haga saltos de línea */
 }
 
 .TodoItem-p--complete{
@@ -32,6 +37,7 @@
 
 /* CHECKOUT  */
 .icon-check {
+    grid-column: 1 / 2;
     width: 20px;
     height: 20px;
     cursor: pointer;
@@ -42,6 +48,7 @@
     outline: none;
     transition: all 0.3s ease-in-out;
     position: relative;
+    flex-shrink: 0;
     /* box-shadow: 0px 0px 5px #ff00ff; */
 }
 
@@ -68,6 +75,7 @@
     }
 }
 .ToDoItem--check{
+    flex-shrink: 0;
     background-color: transparent;
     border: 2px solid rgba(250, 244, 244, 0.753);
     transition: all 0.3s ease-in-out;
@@ -89,6 +97,8 @@
 }
 
 .del-button{
+    grid-column: 3 / 4;
+    flex-shrink: 0;
     font-size: 1.2rem;
     cursor: pointer;
 }

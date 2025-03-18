@@ -10,22 +10,13 @@ function TodoProvider({ children }) {
     loading,
     error,
   } = useLocalStorage('TODOS_V1', []);
+
+  
   const [searchValue, setSearchValue] = React.useState('');
   const [openModal, setOpenModal] = React.useState(false);
 
-  const completedTodos = todos.filter(
-    todo => !!todo.completed
-  ).length;
-  const totalTodos = todos.length;
 
-  const searchedTodos = todos.filter(
-    (todo) => {
-      const todoText = todo.text.toLowerCase();
-      const searchText = searchValue.toLowerCase();
-      return todoText.includes(searchText);
-    }
-  );
-
+/* FUNCION PARA CREAR NUEVOS TODOS */
   const addTodo = (text) => {
     const newTodos = [...todos];
     newTodos.push({
@@ -34,24 +25,46 @@ function TodoProvider({ children }) {
     });
     saveTodos(newTodos);
   };
+/* FUNCION PARA BORRAR TODOS */
+const deleteTodo = (text) => {
+  const newTodos = [...todos];
+  const todoIndex = newTodos.findIndex(
+    (todo) => todo.text === text
+  );
+  newTodos.splice(todoIndex, 1);
+  saveTodos(newTodos);
+};
 
+/* FUNCION PARA BORRAR TODOS LOS TODOS
+  Y COMENZAR DE NUEVO LA LISTA */
+const deleteAllTodos = () => {
+  saveTodos([])
+}
+
+  /* FUNCION PARA ESTABLECER ESTADO TRUE O FALSE 
+  Y PODER MARCAR Y DESMARCAR EL CHECKOUT */
   const completeTodo = (text) => {
-    const newTodos = [...todos];
-    const todoIndex = newTodos.findIndex(
-      (todo) => todo.text === text
-    );
-    newTodos[todoIndex].completed = true;
-    saveTodos(newTodos);
-  };
+    const newTodos = todos.map(todo =>
+      todo.text === text ? {...todo, completed: !todo.completed} : todo);
+      saveTodos(newTodos);
+};
 
-  const deleteTodo = (text) => {
-    const newTodos = [...todos];
-    const todoIndex = newTodos.findIndex(
-      (todo) => todo.text === text
-    );
-    newTodos.splice(todoIndex, 1);
-    saveTodos(newTodos);
-  };
+    /* FUNCION PARA EL CONTADOR DE
+  CUANTOS TODOS HEMOS COMPLETADO */
+  const completedTodos = todos.filter(
+    todo => !!todo.completed
+  ).length;
+  const totalTodos = todos.length;
+
+  /* FUNCION PARA BUSCAR LOS TODOS
+  FILTRANDO A PARTIR DEL BUSCADOR */
+  const searchedTodos = todos.filter(
+    (todo) => {
+      const todoText = todo.text.toLowerCase();
+      const searchText = searchValue.toLowerCase();
+      return todoText.includes(searchText);
+    }
+  );
   
   return (
     <TodoContext.Provider value={{
@@ -67,10 +80,13 @@ function TodoProvider({ children }) {
       deleteTodo,
       openModal,
       setOpenModal,
+      deleteAllTodos,
+      saveTodos,
+
     }}>
       {children}
     </TodoContext.Provider>
   );
 }
 
-export { TodoContext, TodoProvider };
+export { TodoContext, TodoProvider }

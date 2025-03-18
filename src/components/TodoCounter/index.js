@@ -36,13 +36,18 @@ function TodoCounter() {
 
   return (
     <div className="todo-counter">
-      {completedTodos === completedText && totalTodos > 0 ? (
-        <div className='congrats-container'><p className="congrats-message">{congratsMessage}</p></div>
-        
+      {completedTodos === totalTodos && totalTodos > 0 ? (
+
+        <div className='congrats-container'>
+          <p className="congrats-message">{congratsMessage}</p>
+        </div>
+
       ): (
+
         <h1 className="TodoCounter">
         You've completed <span>{completedTodos}</span> / <span>{totalTodos}</span> TODOs
       </h1>
+      
       )}
     </div>
 

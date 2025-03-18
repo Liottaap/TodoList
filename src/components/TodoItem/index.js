@@ -2,17 +2,20 @@ import './TodoItem.css'
 
 function TodoItem({text, completed, onComplete, onDelete}) {
   return (
-    <div className={`ToDoItem ${completed && "ToDoItem--check"}`}>
+    <div className={`ToDoItem ${completed ? "ToDoItem--check" : ""}`}>
       <input 
           type="checkbox" 
-          name="checkbox" 
+          name="checkbox"
           className='icon-check' 
-          onClick={onComplete}
+          checked={completed}
+          onChange={onComplete}
           />
-      <p className={`toDoItem-p ${completed && "TodoItem-p--complete"}`}>{text}</p>
-      <span className='del-button'
-            onClick={onDelete}
-            
+      <p 
+        className={`toDoItem-p ${completed ? "TodoItem-p--complete" : ""}`}
+      >{text}</p>
+      <span 
+        className='del-button'  
+        onClick={onDelete}
       >X</span>
     </div>
   );

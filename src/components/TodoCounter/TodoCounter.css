@@ -13,7 +13,6 @@
 }
 
 .congrats-container{
-
     display: flex;
     justify-content: center;
     align-items: center ;
@@ -28,6 +27,8 @@
     @media(max-width:1000px){
         font-size: 1.6rem;
         text-align: center;
+        /* background-color: rgba(166, 117, 167, 0.5); */
+        border-radius: 20px;
     }
 }
 

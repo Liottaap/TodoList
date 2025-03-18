@@ -1,5 +1,6 @@
 .TodoList{
     width: 90%;
+    min-width: 90%;
     height: 500px;
     overflow-y: auto;
     gap: 20px;
