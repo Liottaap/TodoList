@@ -1,5 +1,6 @@
 
 .loading{
+    overflow: hidden;
     background-image: url('../../assets/retro-loading.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -13,15 +14,18 @@
     }
 }
 
-.loading-span{
+ .loading-span{
     position: absolute;
     width: 12px;
     height: 12px;
     background-color: rgb(82, 42, 7);
-    top: 115.5px;
-    right: 152px;
+    top: 58%;
+    right: 38%;
     animation: loadPoint 1.6s infinite steps(2);
-
+    @media(max-width: 500px){
+        width: 9px;
+        height: 9px;
+    }
 }
 /* Animación para el parpadeo en el loading */
 @keyframes loadPoint {

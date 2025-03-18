@@ -46,7 +46,7 @@ footer {
 .dwm-container{
     display: flex;
     gap: 2px;
-
+    color: whitesmoke;
     width: 200px;
     display: flex;
     align-items: center;
@@ -54,13 +54,21 @@ footer {
     margin-right: 20px;
     text-align: center;
 }
-.dwm-container p{
+.dwm-container a{
+    background-image: url('../../assets/icons/cocktail-svgrepo-com.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+}
+/* .dwm-container p{
     width: 1.3rem;
     width: 50%;
     justify-self: flex-start;
     color: whitesmoke;
 
-}
+} */
 /* ICONS AND BUTTONS */
 .footer-img{
     width: 50px;

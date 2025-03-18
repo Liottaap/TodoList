@@ -10,11 +10,10 @@ function Footer () {
                 <p>LA design - Liotta Ana 2025</p>
             </section>
 
-            <section className='dwm-container'>
-            <p>Cheers</p>
-
-                <img src={Donate} alt="click to donate" className='footer-img donate-img'/>
-            </section>
+            <li className='dwm-container'>
+                Cheers
+                <a href="https://www.paypal.com/donate/?hosted_button_id=K4EKCBHRK8EGN"></a>
+            </li>
 
 
         </footer>
